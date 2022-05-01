@@ -6,7 +6,7 @@ using System.Text;
 
 namespace OnlineJobPortal.Entity
 {
-    class JobseekersDetails
+    public class JobseekersDetails
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

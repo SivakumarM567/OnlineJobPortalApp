@@ -6,7 +6,7 @@ using System.Text;
 
 namespace OnlineJobPortal.Entity
 {
-    class RequirementDetails
+    public class RequirementDetails
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -14,7 +14,7 @@ namespace OnlineJobPortal.Entity
         public string jobTitle { get; set; }
         public string Location { get; set; }
         public string Functional { get; set; }
-        public string TechnicalSkills { get; set; }
+        public string TechnicalSkills { get; set; } 
         public string Company { get; set; }
         public string ContactId { get; set; }
         public string contactperson { get; set; }
