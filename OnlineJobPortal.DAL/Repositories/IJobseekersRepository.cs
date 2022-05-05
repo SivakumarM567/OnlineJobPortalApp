@@ -5,7 +5,7 @@ using OnlineJobPortal.Entity;
 
 namespace OnlineJobPortal.DAL.Repositories
 {
-    interface IJobseekersDetails
+    public interface IJobseekersRepository
     {
         string Save(JobseekersDetails jobseekersDetails);
         string Update(JobseekersDetails jobseekersDetails);

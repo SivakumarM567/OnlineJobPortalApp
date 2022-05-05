@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OnlineJobPortal.BAL\OnlineJobPortal.BAL.csproj" />
     <ProjectReference Include="..\OnlineJobPortal.DAL\OnlineJobPortal.DAL.csproj" />
+    <ProjectReference Include="..\OnlineJobPortal.Entity\OnlineJobPortal.Entity.csproj" />
   </ItemGroup>
 
 

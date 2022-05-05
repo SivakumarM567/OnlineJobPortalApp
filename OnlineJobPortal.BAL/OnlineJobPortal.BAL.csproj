@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineJobPortal.DAL\OnlineJobPortal.DAL.csproj" />
+    <ProjectReference Include="..\OnlineJobPortal.Entity\OnlineJobPortal.Entity.csproj" />
+  </ItemGroup>
+
 </Project>
