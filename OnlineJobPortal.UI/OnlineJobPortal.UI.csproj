@@ -5,11 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OnlineJobPortal.API\OnlineJobPortal.API.csproj" />
     <ProjectReference Include="..\OnlineJobPortal.Entity\OnlineJobPortal.Entity.csproj" />
   </ItemGroup>
 
