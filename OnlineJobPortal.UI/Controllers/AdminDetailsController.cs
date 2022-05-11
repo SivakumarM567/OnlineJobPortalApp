@@ -9,12 +9,13 @@ using OnlineJobPortal.Entity;
 using System.Text;
 using Newtonsoft.Json;
 
+
 namespace OnlineJobPortal.UI.Controllers
 {
-    public class JobseekersDetailsController : Controller
+    public class AdminDetailsController : Controller
     {
         private IConfiguration _configuration;
-        public JobseekersDetailsController(IConfiguration configuration)
+        public AdminDetailsController(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -27,45 +28,18 @@ namespace OnlineJobPortal.UI.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Save(JobseekersDetails jobseekersDetails)
+        public async Task<IActionResult> Save(AdminDetails adminDetails)
         {
             using (HttpClient client = new HttpClient())
             {
-                StringContent content = new StringContent(JsonConvert.SerializeObject(jobseekersDetails), Encoding.UTF8, "application/json");
-                string endPoint = _configuration["WebApiBaseUrl"] + "JobseekersDetails/Save";
+                StringContent content = new StringContent(JsonConvert.SerializeObject(adminDetails), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "AdminDetails/Save";
                 using (var response = await client.PostAsync(endPoint, content))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         ViewBag.status = "Ok";
-                        ViewBag.message = "Jobseeker details saved successfully!";
-                    }
-                    else
-                    {
-                        ViewBag.status = "Error";
-                        ViewBag.message = "Wrong entries!";
-                    }
-                }
-            }
-            return View();
-        }
-        public IActionResult Get()
-        {
-            return View();
-        }
-        [HttpGet]
-        public async Task<IActionResult> Get(JobseekersDetails jobseekersDetails)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                StringContent content = new StringContent(JsonConvert.SerializeObject(jobseekersDetails), Encoding.UTF8, "application/json");
-                string endPoint = _configuration["WebApiBaseUrl"] + "JobseekersDetails/Get";
-                using (var response = await client.PostAsync(endPoint, content))
-                {
-                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        ViewBag.status = "Ok";
-                        ViewBag.message = "Jobseeker details Fetched successfully!";
+                        ViewBag.message = "Admin details saved successfully!";
                     }
                     else
                     {
@@ -81,18 +55,18 @@ namespace OnlineJobPortal.UI.Controllers
             return View();
         }
         [HttpDelete]
-        public async Task<IActionResult> Delete(JobseekersDetails jobseekersDetails)
+        public async Task<IActionResult> Delete(AdminDetails adminDetails)
         {
             using (HttpClient client = new HttpClient())
             {
-                StringContent content = new StringContent(JsonConvert.SerializeObject(jobseekersDetails), Encoding.UTF8, "application/json");
-                string endPoint = _configuration["WebApiBaseUrl"] + "JobseekersDetails/Delete";
+                StringContent content = new StringContent(JsonConvert.SerializeObject(adminDetails), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "AdminDetails/Delete";
                 using (var response = await client.PostAsync(endPoint, content))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         ViewBag.status = "Ok";
-                        ViewBag.message = "Jobseeker details Deleted successfully!";
+                        ViewBag.message = "Admin details Deleted successfully!";
                     }
                     else
                     {
@@ -108,18 +82,18 @@ namespace OnlineJobPortal.UI.Controllers
             return View();
         }
         [HttpPatch]
-        public async Task<IActionResult> Update(JobseekersDetails jobseekersDetails)
+        public async Task<IActionResult> Update(AdminDetails adminDetails)
         {
             using (HttpClient client = new HttpClient())
             {
-                StringContent content = new StringContent(JsonConvert.SerializeObject(jobseekersDetails), Encoding.UTF8, "application/json");
-                string endPoint = _configuration["WebApiBaseUrl"] + "JobseekersDetails/Update";
+                StringContent content = new StringContent(JsonConvert.SerializeObject(adminDetails), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "AdminDetails/Update";
                 using (var response = await client.PostAsync(endPoint, content))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         ViewBag.status = "Ok";
-                        ViewBag.message = "Jobseeker details Updated successfully!";
+                        ViewBag.message = "Admin details Updated successfully!";
                     }
                     else
                     {
@@ -128,10 +102,6 @@ namespace OnlineJobPortal.UI.Controllers
                     }
                 }
             }
-            return View();
-        }
-        public IActionResult GetAll()
-        {
             return View();
         }
     }

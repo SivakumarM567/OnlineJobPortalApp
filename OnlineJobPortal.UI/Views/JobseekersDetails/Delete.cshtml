@@ -1,0 +1,28 @@
+﻿@model OnlineJobPortal.Entity.JobseekersDetails
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+<hr />
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label>Id</label>
+        <input type="number" value="" asp-for="Id" class="form-control">
+    </div>
+    <hr />
+    <div>
+        @{
+            if (@ViewBag.status == "Ok")
+            {
+                <div class="alert alert-success">@ViewBag.message</div>
+            }
+            else
+            {
+                <div class="alert alert-danger">@ViewBag.message</div>
+            }
+        }
+    </div>
+}
+
